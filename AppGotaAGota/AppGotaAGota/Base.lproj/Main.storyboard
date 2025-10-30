@@ -727,7 +727,7 @@
                                                         <rect key="frame" x="4" y="5" width="451" height="272"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeS-uf-J3c">
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeS-uf-J3c">
                                                                 <rect key="frame" x="6" y="230" width="212" height="22"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Litros consumidos hoy:" id="j2X-Be-3rU">
@@ -736,7 +736,7 @@
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
-                                                            <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjy-8n-WQH">
+                                                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjy-8n-WQH">
                                                                 <rect key="frame" x="8" y="201" width="90" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="right" placeholderString="50" bezelStyle="round" id="yic-WU-nJ5">
@@ -749,6 +749,9 @@
                                                                 <rect key="frame" x="103" y="198" width="19" height="28"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="LRv-Qy-oWd"/>
+                                                                <connections>
+                                                                    <action selector="stepperCambioValor:" target="XfG-lQ-9wD" id="a2g-ec-erT"/>
+                                                                </connections>
                                                             </stepper>
                                                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxh-sL-rCy">
                                                                 <rect key="frame" x="1" y="154" width="161" height="32"/>
@@ -757,7 +760,19 @@
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <action selector="guardarConsumo:" target="XfG-lQ-9wD" id="dpY-d6-6qQ"/>
+                                                                </connections>
                                                             </button>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RzW-Om-orh">
+                                                                <rect key="frame" x="8" y="120" width="149" height="24"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Guardado con exito" id="rT8-li-8fX">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
                                                         </subviews>
                                                     </view>
                                                 </box>
@@ -778,13 +793,16 @@
                                                             <segment label="Semanal" width="70"/>
                                                             <segment label="Mensual" width="69" selected="YES" tag="1"/>
                                                         </segments>
+                                                        <connections>
+                                                            <action selector="segmentoGraficoCambiado:" target="XfG-lQ-9wD" id="PkR-sM-W05"/>
+                                                        </connections>
                                                     </segmentedCell>
                                                 </segmentedControl>
                                                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CcR-rP-iWL">
                                                     <rect key="frame" x="17" y="10" width="453" height="230"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 </customView>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79M-aN-akI">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79M-aN-akI">
                                                     <rect key="frame" x="302" y="257" width="170" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Promedio semanal:" id="Yam-wX-iMc">
@@ -808,7 +826,7 @@
                                                         <rect key="frame" x="4" y="5" width="467" height="67"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nD-Fn-JGP">
+                                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nD-Fn-JGP">
                                                                 <rect key="frame" x="158" y="14" width="232" height="40"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                 <textFieldCell key="cell" selectable="YES" placeholderString="¡Cuidado! Tu consumo de ayer fue un 30% más alto que tu promedio." id="qP0-F8-Fcr">
@@ -817,15 +835,17 @@
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
-                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-ql-j9y">
+                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-ql-j9y">
                                                                 <rect key="frame" x="56" y="-3.5" width="67.5" height="75"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="67" id="tWT-FH-n8n"/>
+                                                                </constraints>
                                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSAddTemplate" id="vvz-ps-RYZ"/>
                                                             </imageView>
                                                         </subviews>
                                                     </view>
                                                 </box>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vza-um-nu0">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vza-um-nu0">
                                                     <rect key="frame" x="15" y="173" width="184" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Recomendaciones Ecológicas" id="L3a-NZ-RGZ">
@@ -834,53 +854,29 @@
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylr-bE-3Bv">
-                                                    <rect key="frame" x="9" y="17" width="469" height="141"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <clipView key="contentView" id="oag-xo-ho0">
-                                                        <rect key="frame" x="1" y="1" width="452" height="124"/>
+                                                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKA-hg-88E">
+                                                    <rect key="frame" x="9" y="17" width="469" height="148"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <clipView key="contentView" drawsBackground="NO" id="35U-p1-mbr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="454" height="148"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <view id="4Mz-Tg-Ngn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="437" height="109"/>
+                                                            <textView wantsLayer="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="z0t-bJ-ovM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="454" height="148"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                <subviews>
-                                                                    <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUE-Pb-tob">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="437" height="109"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                        <clipView key="contentView" drawsBackground="NO" id="nOD-74-Q4N">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="422" height="109"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                            <subviews>
-                                                                                <textView wantsLayer="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="0Kx-RO-Wg4">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="422" height="109"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                                    <size key="minSize" width="422" height="109"/>
-                                                                                    <size key="maxSize" width="430" height="10000000"/>
-                                                                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                                </textView>
-                                                                            </subviews>
-                                                                        </clipView>
-                                                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="zvj-lI-XVe">
-                                                                            <rect key="frame" x="-100" y="-100" width="225" height="15"/>
-                                                                            <autoresizingMask key="autoresizingMask"/>
-                                                                        </scroller>
-                                                                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="7YK-Sp-RGk">
-                                                                            <rect key="frame" x="422" y="0.0" width="15" height="109"/>
-                                                                            <autoresizingMask key="autoresizingMask"/>
-                                                                        </scroller>
-                                                                    </scrollView>
-                                                                </subviews>
-                                                            </view>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <size key="minSize" width="454" height="148"/>
+                                                                <size key="maxSize" width="454" height="10000000"/>
+                                                                <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            </textView>
                                                         </subviews>
                                                     </clipView>
-                                                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="8jH-8v-ihq">
-                                                        <rect key="frame" x="1" y="125" width="452" height="15"/>
+                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="9H7-V0-ikb">
+                                                        <rect key="frame" x="-100" y="-100" width="225" height="15"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
-                                                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="iHM-Lo-mOT">
-                                                        <rect key="frame" x="453" y="1" width="15" height="124"/>
+                                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="PAq-HL-k4j">
+                                                        <rect key="frame" x="454" y="0.0" width="15" height="148"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -891,6 +887,16 @@
                             </tabView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="boxAlerta" destination="GG8-WS-Zgo" id="XNt-sc-zfv"/>
+                        <outlet property="campoLitros" destination="qjy-8n-WQH" id="Qj9-Hd-Cna"/>
+                        <outlet property="campoRecomendaciones" destination="vKA-hg-88E" id="ayl-gJ-Nyd"/>
+                        <outlet property="labelAlerta" destination="6nD-Fn-JGP" id="EP2-B3-hxu"/>
+                        <outlet property="labelFeedback" destination="RzW-Om-orh" id="XXf-G3-2a4"/>
+                        <outlet property="labelPromedio" destination="79M-aN-akI" id="1IL-Eq-BAw"/>
+                        <outlet property="stepperLitros" destination="GP2-JA-Dn0" id="YT9-8O-ILE"/>
+                        <outlet property="vistaGrafico" destination="CcR-rP-iWL" id="nvd-1w-WYz"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
